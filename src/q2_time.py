@@ -10,7 +10,7 @@ def q2_time(file_path: str) -> List[Tuple[str, int]]:
     """
     emoji_counter = Counter()
 
-    # Emoji regex pattern that matches all emoji characters
+
     emoji_pattern = re.compile(
         "["
         "\U0001F600-\U0001F64F"  # emoticons
@@ -33,10 +33,10 @@ def q2_time(file_path: str) -> List[Tuple[str, int]]:
             tweet = json.loads(line)
             content = tweet.get('content', '')
 
-            # Find all emojis in the content
+           
             emojis = emoji_pattern.findall(content)
 
-            # Count each individual emoji
+           
             for emoji_group in emojis:
                 for emoji in emoji_group:
                     emoji_counter[emoji] += 1

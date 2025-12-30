@@ -20,10 +20,10 @@ def q1_time(file_path: str) -> List[Tuple[datetime.date, str]]:
             date_counts[date] += 1
             date_user_counts[date][username] += 1
 
-    # Get top 10 dates
+
     top_dates = date_counts.most_common(10)
 
-    # For each top date, get the user with most tweets
+
     result = []
     for date, _ in top_dates:
         top_user = date_user_counts[date].most_common(1)[0][0]

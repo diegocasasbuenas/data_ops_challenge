@@ -12,7 +12,7 @@ def q3_memory(file_path: str) -> List[Tuple[str, int]]:
         for line in f:
             tweet = json.loads(line)
 
-            # Get mentions from mentionedUsers field
+        
             mentioned_users = tweet.get('mentionedUsers')
 
             if mentioned_users:
@@ -21,6 +21,6 @@ def q3_memory(file_path: str) -> List[Tuple[str, int]]:
                     if username:
                         mention_counts[username] = mention_counts.get(username, 0) + 1
 
-    # Sort and get top 10
+  
     sorted_mentions = sorted(mention_counts.items(), key=lambda x: x[1], reverse=True)
     return sorted_mentions[:10]
