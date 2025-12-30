@@ -13,7 +13,7 @@ def q3_time(file_path: str) -> List[Tuple[str, int]]:
         for line in f:
             tweet = json.loads(line)
 
-            # Get mentions from mentionedUsers field
+            
             mentioned_users = tweet.get('mentionedUsers')
 
             if mentioned_users:

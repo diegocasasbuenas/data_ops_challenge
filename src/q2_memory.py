@@ -9,7 +9,7 @@ def q2_memory(file_path: str) -> List[Tuple[str, int]]:
     """
     emoji_counts = {}
 
-    # Emoji regex pattern that matches all emoji characters
+    
     emoji_pattern = re.compile(
         "["
         "\U0001F600-\U0001F64F"  # emoticons
@@ -32,14 +32,14 @@ def q2_memory(file_path: str) -> List[Tuple[str, int]]:
             tweet = json.loads(line)
             content = tweet.get('content', '')
 
-            # Find all emojis in the content
+            
             emojis = emoji_pattern.findall(content)
 
-            # Count each individual emoji
+     
             for emoji_group in emojis:
                 for emoji in emoji_group:
                     emoji_counts[emoji] = emoji_counts.get(emoji, 0) + 1
 
-    # Sort and get top 10
+   
     sorted_emojis = sorted(emoji_counts.items(), key=lambda x: x[1], reverse=True)
     return sorted_emojis[:10]
